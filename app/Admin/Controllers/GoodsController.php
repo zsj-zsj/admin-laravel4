@@ -3,8 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Model\Goods;
-use App\Model\Brand;
-use App\Model\Category;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -28,12 +26,6 @@ class GoodsController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Goods());
-        $grids = new Grid(new Category());
-
-        $grid->model()->orderBy('goods_id','desc');
-        
-        $grids->model()->join('shop_admin_category','shop_admin_goods.cate_id','=','shop_admin_category.cate_id');
-
         $grid->column('goods_id', __('Goods id'));
         $grid->column('goods_name', __('Goods name'));
         $grid->column('goods_price', __('Goods price'));
@@ -42,8 +34,6 @@ class GoodsController extends AdminController
         $grid->column('goods_img', __('Goods img'))->image();
         $grid->column('goods_desc', __('Goods desc'));
         $grid->column('goods_score', __('Goods score'));
-        $grid->column('brand_id', __('Brand id'));
-        $grids->column('cate_name', __('Cate id'));
         
         return $grid;
     }
