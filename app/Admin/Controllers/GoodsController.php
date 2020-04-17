@@ -26,6 +26,8 @@ class GoodsController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Goods());
+        $grid->model()->orderBy('goods_id','desc');
+        
         $grid->column('goods_id', __('Goods id'));
         $grid->column('goods_name', __('Goods name'));
         $grid->column('goods_price', __('Goods price'));
