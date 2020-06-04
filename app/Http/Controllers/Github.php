@@ -8,7 +8,8 @@ class Github extends Controller
 {
     public function git()
     {
-        $cmd = 'cd /data/wwwroot/default/admin4 && git pull ';
+        echo 111;
+        $cmd = "cd /data/wwwroot/default/admin4 && git pull ";
         shell_exec($cmd);
     }
 }
