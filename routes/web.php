@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('git','Github@git');
+Route::post('git','Github@git');
