@@ -10,6 +10,6 @@ class Github extends Controller
     {
         $cmd = 'cd /data/wwwroot/default/admin4 && git pull ';
         $res=shell_exec($cmd);
-        var_dump($res);
+        // var_dump($res);
     }
 }
